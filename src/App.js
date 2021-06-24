@@ -17,27 +17,41 @@ const App = () => {
   const searchWord = event => {
     event.preventDefault()
     let searchArr = []
+    // iterate through chapters
       markData.chapters.forEach((element, index) => {
         let chapter = index + 1
         let verse = 0
         let text = ''
+        // iterate through verses
         element.verses.forEach((element, index) => {
-          if (element.text.includes(word)) {
+          let textArr = element.text.split(/([ .,:;])+/gi)
+          console.log(textArr)
+          // check if verse contains search query
+          if (textArr.includes(word)) {
             verse = index + 1
-            text = element.text
-            searchArr.push({chapter: chapter, verse: verse, text: text})
+            text = textArr.join('')
+            textArr.forEach((element, index, array) => {
+              if (element === word) {
+                let newTextArr = textArr
+                newTextArr[index] = `<strong>${element}</strong>`
+                text = newTextArr.join('')
+                console.log(newTextArr)
+                searchArr.push({chapter: chapter, verse: verse, text: text, array: array, index: index})
+                newTextArr[index] = element
+              }
+            })
           }
         })
       })
       searchArr.push(searchArr)
-      console.log(searchArr)
+      setResults(searchArr)
   }
 
   return (
     <div id='main_div'>
-      <Search searchWord={searchWord} handleInput={handleInput} />
       <p>{word}</p>
-      <Results />
+      <Search searchWord={searchWord} handleInput={handleInput} />
+      <Results results={results} input={word} />
     </div>
   )
 }
