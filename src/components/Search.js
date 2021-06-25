@@ -1,3 +1,5 @@
+import './Search.css'
+
 const Search = props => {
     return (
         <form id='search_form' autoComplete='off'>

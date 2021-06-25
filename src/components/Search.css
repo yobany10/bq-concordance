@@ -1,0 +1,25 @@
+#search_form {
+    display: grid;
+    gap: 1rem;
+    /* background-color: dimgray; */
+    padding: 20vh 1rem 1rem 1rem;
+}
+
+#search_input {
+    max-width: 300px;
+    justify-self: center;
+    border-radius: 5px;
+    border: 2px rgb(226, 225, 225) solid;
+    padding: 5px;
+}
+
+#search_button {
+    background-color: dodgerblue;
+    color: white;
+    border: none;
+    padding: 5px 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    max-width: 200px;
+    justify-self: center;
+}

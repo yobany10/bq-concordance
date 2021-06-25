@@ -25,7 +25,7 @@ const App = () => {
         // iterate through verses
         element.verses.forEach((element, index) => {
           let textArr = element.text.split(/([ .,:;])+/gi)
-          console.log(textArr)
+          // console.log(textArr)
           // check if verse contains search query
           if (textArr.includes(word)) {
             verse = index + 1
@@ -33,7 +33,7 @@ const App = () => {
             textArr.forEach((element, index, array) => {
               if (element === word) {
                 let newTextArr = textArr
-                newTextArr[index] = `<strong>${element}</strong>`
+                // newTextArr[index] = `<strong>${element}</strong>`
                 text = newTextArr.join('')
                 console.log(newTextArr)
                 searchArr.push({chapter: chapter, verse: verse, text: text, array: array, index: index})
@@ -43,14 +43,14 @@ const App = () => {
           }
         })
       })
-      searchArr.push(searchArr)
+      console.log('SEARCH ARRAY', searchArr)
       setResults(searchArr)
   }
 
   return (
     <div id='main_div'>
-      <p>{word}</p>
       <Search searchWord={searchWord} handleInput={handleInput} />
+      <p>{results.length} Results</p>
       <Results results={results} input={word} />
     </div>
   )

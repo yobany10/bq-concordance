@@ -1,9 +1,10 @@
 import Verse from './Verse'
+import './Results.css'
 
 const Results = props => {
     return (
-        <div>
-            {props.results.map((element, index) => <Verse data={element} input={props.input} key={index + 1} />)}
+        <div id="results_container">
+            {props.results.map((element, index) => <Verse data={element} order={index + 1} input={props.input} key={index + 1} />)}
         </div>
     )
 }

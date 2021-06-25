@@ -1,0 +1,10 @@
+.verse_card {
+    background-color: rgb(226, 225, 225);
+    padding: 1rem;
+}
+
+.verse_order {
+    padding: 0;
+    margin: 0;
+    color: dodgerblue;
+}
