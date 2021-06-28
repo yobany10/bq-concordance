@@ -50,7 +50,7 @@ const App = () => {
   return (
     <div id='main_div'>
       <Search searchWord={searchWord} handleInput={handleInput} />
-      <p>{results.length} Results</p>
+      <p id='results_badge'>{results.length} Results</p>
       <Results results={results} input={word} />
     </div>
   )

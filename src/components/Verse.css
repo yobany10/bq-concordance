@@ -1,10 +1,20 @@
 .verse_card {
-    background-color: rgb(226, 225, 225);
+    background-color: #161718;
+    color: white;
     padding: 1rem;
 }
 
 .verse_order {
     padding: 0;
     margin: 0;
-    color: dodgerblue;
+    color: #729ca2;
+}
+
+.verse_ref {
+    padding: 0;
+    margin: 0;
+}
+
+.verse_query {
+    color: #ff893b;
 }
