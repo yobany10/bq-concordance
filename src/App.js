@@ -49,6 +49,7 @@ const App = () => {
 
   return (
     <div id='main_div'>
+      <h1 id='logo_title'>BQ Concordance</h1>
       <Search searchWord={searchWord} handleInput={handleInput} />
       <p id='results_badge'>{results.length} Results</p>
       <Results results={results} input={word} />

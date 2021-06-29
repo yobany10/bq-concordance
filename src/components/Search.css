@@ -2,7 +2,7 @@
     display: grid;
     gap: 1rem;
     /* background-color: dimgray; */
-    padding: 20vh 1rem 1rem 1rem;
+    padding: 1rem;
 }
 
 #search_input {
