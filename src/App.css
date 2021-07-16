@@ -1,17 +1,3 @@
 #main_div {
   display: grid;
 }
-
-#logo_title {
-  color: #ff893b;
-  justify-self: center;
-  margin: 20vh 1rem 1rem 1rem;
-}
-
-#results_badge {
-  justify-self: start;
-  /* background-color: #52585e; */
-  color: white;
-  margin: 1rem;
-  padding: 5px 10px;
-}

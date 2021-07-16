@@ -1,0 +1,80 @@
+#home_div {
+    display: grid;
+    gap: 1rem;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(-45deg, #ffffff, #bbbbbb, #ffffff, #bbbbbb);
+	background-size: 400% 400%;
+	animation: bg_gradient 35s ease infinite;
+}
+
+@keyframes bg_gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+#logo_title {
+    justify-self: center;
+    margin: 1rem 1rem 1rem 1rem;
+    max-width: 70vw;
+    font-size: 50px;
+    align-self: end;
+  }
+
+#intro_btn {
+    justify-self: center;
+}
+
+.primary_btn {
+    background-color: #494949;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 20px;
+    border-radius: 3rem;
+    cursor: pointer;
+    max-width: 200px;
+}
+
+.primary_btn:hover {
+    background-color: tomato;
+    color: white;
+
+}
+
+.tracking-in-expand {
+	-webkit-animation: tracking-in-expand 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-expand 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+@-webkit-keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
