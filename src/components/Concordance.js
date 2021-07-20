@@ -1,40 +1,43 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useParams } from 'react-router'
+import { Link } from 'react-router-dom'
 import Search from './Search'
 import Results from './Results'
-import markData from '../data/mark'
+import firstKingsData from '../data/1kings'
 import './Concordance.css'
 
 const Concordance = props => {
     const [word, setWord] = useState('')
     const [results, setResults] = useState([])
+    let { query } = useParams()
 
     const handleInput = event => {
       let input = event.target.value
       setWord(input)
     }
 
-    const searchWord = event => {
-        event.preventDefault()
+    const searchWord = () => {
         let searchArr = []
         // iterate through chapters
-          markData.chapters.forEach((element, index) => {
-            let chapter = index + 1
+          firstKingsData.chapters.forEach((element, index) => {
+            let book = '1 Kings'
+            let chapter = element.chapter
             let verse = 0
             let text = ''
             // iterate through verses
             element.verses.forEach((element, index) => {
               let textArr = element.text.split(/([ .,:;])+/gi)
               // check if verse contains search query
-              if (textArr.includes(word)) {
-                verse = index + 1
+              if (textArr.includes(query)) {
+                verse = element.verse
                 text = textArr.join('')
                 textArr.forEach((element, index, array) => {
-                  if (element === word) {
+                  if (element === query) {
                     let newTextArr = textArr
                     // newTextArr[index] = `<strong>${element}</strong>`
                     text = newTextArr.join('')
                     console.log(newTextArr)
-                    searchArr.push({chapter: chapter, verse: verse, text: text, array: array, index: index})
+                    searchArr.push({book: book, chapter: chapter, verse: verse, text: text, array: array, index: index})
                     newTextArr[index] = element
                   }
                 })
@@ -45,9 +48,16 @@ const Concordance = props => {
           setResults(searchArr)
       }
 
+      useEffect(() => {
+          searchWord()
+      })
+
     return (
-        <div>
-            <Search searchWord={searchWord} handleInput={handleInput} />
+        <div id='concordance_div'>
+            <Link to={`/`} id='search_title_link' className='remove_link_style'>
+                <h1 id='search_title'>BQ CONCORDANCE™</h1>
+            </Link>
+            <Search searchWord={searchWord} handleInput={handleInput} query={word} />
             <p id='results_badge'>{results.length} Results</p>
             <Results results={results} input={word} />
         </div>

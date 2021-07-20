@@ -1,5 +1,23 @@
+#concordance_div {
+    display: grid;
+}
+
+.remove_link_style {
+    text-decoration: none;
+}
+
+#search_title_link {
+    justify-self: center;
+}
+
+#search_title {
+    justify-self: center;
+    margin: 20vh 0 0 0;
+    color: #494949;
+}
+
 #results_badge {
-    justify-self: start;
+    justify-self: center;
     margin: 1rem;
     padding: 5px 10px;
   }

@@ -3,21 +3,6 @@
     gap: 1rem;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(-45deg, #ffffff, #bbbbbb, #ffffff, #bbbbbb);
-	background-size: 400% 400%;
-	animation: bg_gradient 35s ease infinite;
-}
-
-@keyframes bg_gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
 }
 
 #logo_title {
@@ -26,7 +11,7 @@
     max-width: 70vw;
     font-size: 50px;
     align-self: end;
-  }
+}
 
 #intro_btn {
     justify-self: center;

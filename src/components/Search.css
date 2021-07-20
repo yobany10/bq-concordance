@@ -13,7 +13,11 @@
     border-radius: 5px;
     border: 2px rgb(226, 225, 225) solid;
     padding: 5px;
-    margin: 20vh 0 0 0;
+    margin: 0 0 0 0;
+}
+
+#search_button_link {
+    justify-self: center;
 }
 
 #search_button {
@@ -21,15 +25,13 @@
     color: white;
     border: none;
     padding: 5px 10px;
-    font-weight: bolder;
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
     max-width: 200px;
-    justify-self: center;
 }
 
 #search_button:hover {
-    background-color: #ff3300;
+    background-color: tomato;
     color: white;
 }

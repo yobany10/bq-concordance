@@ -11,6 +11,7 @@ const App = () => {
       <Router>
         <Route exact path='/'><Home /></Route>
         <Route exact path='/concordance'><Concordance /></Route>
+        <Route exact path='/concordance/:query'><Concordance /></Route>
       </Router>
     </div>
   )
