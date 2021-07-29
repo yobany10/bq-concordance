@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react'
-import { useParams } from 'react-router'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Search from './Search'
 import Results from './Results'
@@ -9,8 +8,6 @@ import './Concordance.css'
 const Concordance = props => {
     const [word, setWord] = useState('')
     const [results, setResults] = useState([])
-    
-    let { query } = useParams()
 
     const handleInput = event => {
       let input = event.target.value
