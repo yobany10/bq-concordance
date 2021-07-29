@@ -1,5 +1,6 @@
 #concordance_div {
     display: grid;
+    max-width: 1500px;
 }
 
 .remove_link_style {
