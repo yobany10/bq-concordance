@@ -8,6 +8,7 @@ import './Concordance.css'
 const Concordance = props => {
     const [word, setWord] = useState('')
     const [results, setResults] = useState([])
+    const [isCaseSensitive, setIsCaseSensitive] = useState(false)
 
     const handleInput = event => {
       let input = event.target.value
@@ -28,12 +29,16 @@ const Concordance = props => {
               // iterate through verses
               element.verses.forEach((element, index) => {
                 let textArr = element.text.split(/([ .,:;])+/gi)
+                let upperCaseTextArr = textArr.map(item => item.toUpperCase())
+                let upperCaseWord = word.toUpperCase()
+                console.log(textArr)
+                console.log(upperCaseWord)
                 // check if verse contains search query
-                if (textArr.includes(word)) {
+                if (upperCaseTextArr.includes(upperCaseWord)) {
                   verse = element.verse
                   text = textArr.join('')
                   textArr.forEach((element, index, array) => {
-                    if (element === word) {
+                    if (element.toUpperCase() === word.toUpperCase()) {
                       let newTextArr = textArr
                       text = newTextArr.join('')
                     // console.log(newTextArr)
