@@ -1,0 +1,7 @@
+#concordance-filter-div {
+    display: grid;
+}
+
+#filter-btn-group {
+    justify-self: center;
+}
