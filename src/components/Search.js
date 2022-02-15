@@ -3,7 +3,7 @@ import './Search.css'
 
 const Search = props => {
     return (
-        <form id='search_form' autoComplete='off'>
+        <form id='search_form' autoComplete='off' onSubmit={e => e.preventDefault()}>
             <input id='search_input' type='text' placeholder='search a word' onChange={props.handleInput}></input>
             {/* <Link to={`/concordance/${props.query}`} id='search_button_link'> */}
                 {/* <button id='search_button' type='submit'>SEARCH</button> */}

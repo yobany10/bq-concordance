@@ -2,7 +2,7 @@ import {useState} from 'react'
 import './Verse.css'
 
 const Verse = props => {
-    const [showFullText, setShowFullText] = useState(false)
+    const [showFullText, setShowFullText] = useState(true)
 
     let textStr = "" + props.data.text
 
